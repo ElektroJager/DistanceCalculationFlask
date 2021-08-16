@@ -1,0 +1,5 @@
+[2021-08-16 15:12:39,314] INFO in app: Adress = ÝSTANBUL | 1755.9KM,
+[2021-08-16 15:12:39,316] INFO in _internal: 127.0.0.1 - - [16/Aug/2021 15:12:39] "POST /distance HTTP/1.1" 200 -
+[2021-08-16 15:25:32,037] WARNING in app: Adress = RUSSIA, MOSCOW, ARBATSKO-POKROVSKAYA LINE, METRO ARBATSKAYA | Location is in MKAD Zone,
+[2021-08-16 15:25:32,039] INFO in _internal: 127.0.0.1 - - [16/Aug/2021 15:25:32] "POST /distance HTTP/1.1" 200 -
+[2021-08-16 15:25:50,676] INFO in _internal:  * Detected change in 'c:\\Users\\erolc\\OneDrive\\Masaüstü\\Voctiv Case\\tests\\test_modules.py', reloading
