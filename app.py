@@ -130,7 +130,7 @@ MKAD_KM =  [
 client = Client("bc77a24e-3a2a-4a05-83e9-abbe885323f3")
 
 ## Creating a Polygon With The Coordinates of MKAD
-MKAD_Zone = Polygon(MKAD_KM)
+mkad_zone = Polygon(MKAD_KM)
 
 app = Flask(__name__)
 
@@ -145,49 +145,44 @@ def distance():
         location = request.form['location']
 
         # Moscow Ring Road 55,7525 Lat, 37,6232 Long
-        MoscowRingRoad = (55.75249, 37.62320)
+        MOSCOW_RING_ROAD = (55.75249, 37.62320)
 
         ## Location Information to Calculate Distance,
         try:
             coordinates = client.coordinates(location)
             
         except yandex_geocoder.YandexGeocoderException:
-            print("Adress not found !!!")
             return render_template('fail.html')
         
             
-        location_Long= round(coordinates[0],5)
-        location_Lat = round(coordinates[1],5) 
+        location_long= round(coordinates[0],5)
+        location_lat = round(coordinates[1],5) 
         
-        location_coords = location_Lat,location_Long
+        location_coords = location_lat,location_long
         
         ## Location Point to Check if its in the MKAD_Zone
-        location_point = Point(location_Lat,location_Long)
-
-        # print(f'latitude {location_Lat}')
-        # print(f'longitude {location_Long}')
-        # print(f'location coords {location_coords}')
+        location_point = Point(location_lat,location_long)
 
         ## Creating and Configuring Logger
-        distanceLogsFile = 'distanceLogs.log'
+        distance_logs_file = 'distanceLogs.log'
         LOG_FORMAT = '[%(asctime)s] %(levelname)s in %(module)s: %(message)s'
-        logging.basicConfig(filename = distanceLogsFile, 
+        logging.basicConfig(filename = distance_logs_file, 
                             level =  logging.INFO,
                             format = LOG_FORMAT,
                             filemode=   'a',
             )
         logger = logging.getLogger()
 
-        if(location_point.within(MKAD_Zone)):
+        if(location_point.within(mkad_zone)):
             ## Logging Warning If Location Is In MKAD Zone
             logger.warning('Adress = ' + str(location.upper()) + ' | ' + 'Location is in MKAD Zone' + ',')
      
         else:
             ## Calculating Distance
-            distanceToLocation = round(haversine(MoscowRingRoad,location_coords), 2)
+            distance_to_location = round(haversine(MOSCOW_RING_ROAD, location_coords), 2)
 
             ## Adding Results to Log File
-            logger.info('Adress = ' + str(location.upper()) + ' | ' + str(distanceToLocation) + 'KM' + ',')
+            logger.info('Adress = ' + str(location.upper()) + ' | ' + str(distance_to_location) + 'KM' + ',')
 
             
         return render_template('success.html')

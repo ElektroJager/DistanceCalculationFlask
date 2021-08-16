@@ -11,37 +11,37 @@ from shapely.geometry.polygon import Polygon
 
 client = Client("bc77a24e-3a2a-4a05-83e9-abbe885323f3")
 
-def inputData(inputData):
+def input_data(input_data):
     try:
-        coordinates = client.coordinates(inputData)
+        coordinates = client.coordinates(input_data)
         return True
 
     except yandex_geocoder.YandexGeocoderException:
         return False
 
 def distance(location):
-    MoscowRingRoad = (55.75249, 37.62320)
+    MOSCOW_RING_ROAD = (55.75249, 37.62320)
 
     coordinates = client.coordinates(location) 
 
-    location_Long= round(coordinates[0],5)
-    location_Lat = round(coordinates[1],5) 
-    location_coords = location_Lat,location_Long  
+    location_long= round(coordinates[0],5)
+    location_lat = round(coordinates[1],5)
+    location_coords = location_lat,location_long  
 
-    return round(haversine(MoscowRingRoad,location_coords), 2) 
+    return round(haversine(MOSCOW_RING_ROAD,location_coords), 2) 
 
-def insideMKAD(location):
+def inside_mkad(location):
     ## Creating a Polygon With The Coordinates of MKAD
-    MKAD_Zone = Polygon(MKAD_KM)
+    mkad_zone = Polygon(MKAD_KM)
 
     coordinates = client.coordinates(location) 
 
-    location_Long= round(coordinates[0],5)
-    location_Lat = round(coordinates[1],5) 
+    location_long= round(coordinates[0],5)
+    location_lat = round(coordinates[1],5) 
 
-    location_point = Point(location_Lat,location_Long)
+    location_point = Point(location_lat,location_long)
 
-    if(location_point.within(MKAD_Zone)):
+    if(location_point.within(mkad_zone)):
         return True
     else:
         return False
@@ -52,19 +52,19 @@ def test_distance():
     # İstanbul Distance 1755.9
     assert distance("İstanbul") == 1755.9 
 
-def test_Zone():
+def test_zone():
     # Inside
-    assert insideMKAD("Lyon") == False
+    assert inside_mkad("Lyon") == False
     # Outside
-    assert insideMKAD("Russia, Moscow, Arbatsko-Pokrovskaya Line, metro Arbatskaya") == True
+    assert inside_mkad("Russia, Moscow, Arbatsko-Pokrovskaya Line, metro Arbatskaya") == True
 
-def test_Input():
+def test_input():
     # Valid Input
-    assert inputData("İstanbul") == True
+    assert input_data("İstanbul") == True
     # Invalid Inputs
-    assert inputData("1423128745128491slşfqlşfk124o1ı249012wd12qw45fas56f4q5wfasjmfjkqf^%") == False
-    assert inputData("123465892315675646789") == False
-    assert inputData("='^+('+(='^+!='^)'^=%()'^+!'(+'^(+('^%('") == False
+    assert input_data("1423128745128491slşfqlşfk124o1ı249012wd12qw45fas56f4q5wfasjmfjkqf^%") == False
+    assert input_data("123465892315675646789") == False
+    assert input_data("='^+('+(='^+!='^)'^=%()'^+!'(+'^(+('^%('") == False
 
 
 MKAD_KM =  [
