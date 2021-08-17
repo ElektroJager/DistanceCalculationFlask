@@ -17,5 +17,5 @@ You will see the information about adress.
 - Distance from Moscow Ring Road
 - Whether the adress is inside or outside the MKAD.
 
-![image](https://user-images.githubusercontent.com/48105864/129760529-ec9376ab-42cd-47a3-b7a7-c0c6a238a4fc.png)
+![image](https://user-images.githubusercontent.com/48105864/129761017-33458013-e431-4b5c-8300-014695e176a5.png)
 
