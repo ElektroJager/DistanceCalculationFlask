@@ -8,16 +8,16 @@ Start flask server by going to the folder where the application is located and t
 $ flask run
 ```
 
-Go to http://127.0.0.1:5000/ and enter the address that distance you want to calculate. Then click check distance.
+Go to http://127.0.0.1:5000/ and enter the address that distance you want to calculate. Then click calculate distance.
 
-![image](https://user-images.githubusercontent.com/48105864/129760333-05d4b526-cd9e-42b1-9c03-7a50e9dbc0be.png)
+![image](https://user-images.githubusercontent.com/48105864/129762642-52d0c126-37fc-4416-99bf-43ed6b1fd303.png)
 
 You will see the information about adress.
 - Adress
 - Distance from Moscow Ring Road
 - Whether the adress is inside or outside the MKAD.
 
-![image](https://user-images.githubusercontent.com/48105864/129761017-33458013-e431-4b5c-8300-014695e176a5.png)
+![image](https://user-images.githubusercontent.com/48105864/129762667-5c784762-642f-48fe-9a1f-86aa951927cb.png)
 
 If you want to calculate the distance of another adress. Click to calculate another location.
 
