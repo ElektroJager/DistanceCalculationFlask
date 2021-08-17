@@ -19,3 +19,7 @@ You will see the information about adress.
 
 ![image](https://user-images.githubusercontent.com/48105864/129761017-33458013-e431-4b5c-8300-014695e176a5.png)
 
+If you want to calculate the distance of another adress. Click to calculate another location.
+
+All the information about adress will be logged in distance_logs.log file.
+
