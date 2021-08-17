@@ -1,7 +1,7 @@
-## Distance Calculation Blueprint
+# Distance Calculation Blueprint
 Flask Blueprint to find the distance from the Moscow Ring Road to the specified address.
 
-# How to use.
+## How to use.
 Start flask server by going to the folder where the application is located and typing "flask run" at the command prompt.
 
 ```
