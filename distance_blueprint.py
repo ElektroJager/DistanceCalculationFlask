@@ -143,34 +143,34 @@ distance_blueprint = Blueprint('distance_page', __name__,
 def adress():
    return render_template('adress.html')
 
-@distance_blueprint.route('/distance', methods = ['POST', 'GET'])
+@distance_blueprint.route('/distance', methods = ['POST'])
 def distance():
     if request.method == 'POST':
         location = request.form['location']
 
-        # Moscow Ring Road 55,7525 Lat, 37,6232 Long
+        # Moscow Ring Road 55,75249 Lat, 37,62320 Long
         MOSCOW_RING_ROAD = (55.75249, 37.62320)
 
         ## Location Information to Calculate Distance,
         try:
             coordinates = client.coordinates(location)
-            
+
         except yandex_geocoder.YandexGeocoderException:
             return render_template('fail.html')
-        
-            
+
+
         location_long= round(coordinates[0],5)
-        location_lat = round(coordinates[1],5) 
-        
+        location_lat = round(coordinates[1],5)
+
         location_coords = location_lat,location_long
-        
+
         ## Location Point to Check if its in the MKAD_Zone
         location_point = Point(location_lat,location_long)
 
         ## Creating and Configuring Logger
-        distance_logs_file = 'distanceLogs.log'
+        distance_logs_file = 'distance_logs.log'
         LOG_FORMAT = '[%(asctime)s] %(levelname)s in %(module)s: %(message)s'
-        logging.basicConfig(filename = distance_logs_file, 
+        logging.basicConfig(filename = distance_logs_file,
                             level =  logging.INFO,
                             format = LOG_FORMAT,
                             filemode=   'a',
@@ -189,11 +189,10 @@ def distance():
         if(location_point.within(mkad_zone)):
             ## Logging Warning If Location Is In MKAD Zone
             logger.warning('Adress = ' + str(location.upper()) + ' | ' + 'Location is in MKAD Zone' + ',')
-     
+
         else:
             ## Adding Results to Log File
             logger.info('Adress = ' + str(location.upper()) + ' | ' + str(distance_to_location) + 'KM' + ',')
 
-            
+
         return render_template('success.html', location_data = location_data)
-    
