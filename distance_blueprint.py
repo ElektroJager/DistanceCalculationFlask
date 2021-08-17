@@ -177,17 +177,23 @@ def distance():
             )
         logger = logging.getLogger()
 
+        ## Calculating Distance
+        distance_to_location = round(haversine(MOSCOW_RING_ROAD, location_coords), 2)
+
+        location_data = {
+            'location_adress' : location.upper(),
+            'location_distance': distance_to_location,
+            'location_is_in_mkad' : location_point.within(mkad_zone),
+        }
+
         if(location_point.within(mkad_zone)):
             ## Logging Warning If Location Is In MKAD Zone
             logger.warning('Adress = ' + str(location.upper()) + ' | ' + 'Location is in MKAD Zone' + ',')
      
         else:
-            ## Calculating Distance
-            distance_to_location = round(haversine(MOSCOW_RING_ROAD, location_coords), 2)
-
             ## Adding Results to Log File
             logger.info('Adress = ' + str(location.upper()) + ' | ' + str(distance_to_location) + 'KM' + ',')
 
             
-        return render_template('success.html')
+        return render_template('success.html', location_data = location_data)
     
