@@ -1,5 +1,5 @@
 ## Flask Modules
-from flask import Flask, render_template, request
+from flask import Flask
 
 ## Import Blueprint
 from distance_blueprint import distance_blueprint

@@ -1,6 +1,18 @@
-[2021-08-17 19:09:02,971] WARNING in distance_blueprint: Adress = RUSSIA, MOSCOW, ARBATSKO-POKROVSKAYA LINE, METRO ARBATSKAYA | Location is in MKAD Zone,
-[2021-08-17 19:09:02,973] INFO in _internal: 127.0.0.1 - - [17/Aug/2021 19:09:02] "POST /distance HTTP/1.1" 200 -
-[2021-08-17 19:13:33,465] WARNING in distance_blueprint: Adress = RUSSIA, MOSCOW, ARBATSKO-POKROVSKAYA LINE, METRO ARBATSKAYA | Location is in MKAD Zone,
-[2021-08-17 19:13:33,472] INFO in _internal: 127.0.0.1 - - [17/Aug/2021 19:13:33] "POST /distance HTTP/1.1" 200 -
-[2021-08-17 19:15:05,367] WARNING in distance_blueprint: Adress = RUSSIA, MOSCOW, ARBATSKO-POKROVSKAYA LINE, METRO ARBATSKAYA | Location is in MKAD Zone,
-[2021-08-17 19:15:05,370] INFO in _internal: 127.0.0.1 - - [17/Aug/2021 19:15:05] "POST /distance HTTP/1.1" 200 -
+[2021-08-17 21:33:58,651] WARNING in distance_blueprint: Adress = RUSSIA, MOSCOW, ARBATSKO-POKROVSKAYA LINE, METRO ARBATSKAYA | Location is in MKAD Zone,
+[2021-08-17 21:33:58,653] INFO in _internal: 127.0.0.1 - - [17/Aug/2021 21:33:58] "POST /distance HTTP/1.1" 200 -
+[2021-08-17 21:33:58,768] INFO in _internal: 127.0.0.1 - - [17/Aug/2021 21:33:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[2021-08-17 21:33:59,719] INFO in _internal: 127.0.0.1 - - [17/Aug/2021 21:33:59] "GET / HTTP/1.1" 200 -
+[2021-08-17 21:34:10,309] INFO in _internal: 127.0.0.1 - - [17/Aug/2021 21:34:10] "POST /distance HTTP/1.1" 200 -
+[2021-08-17 21:34:10,496] INFO in _internal: 127.0.0.1 - - [17/Aug/2021 21:34:10] "POST /distance HTTP/1.1" 200 -
+[2021-08-17 21:34:17,119] INFO in _internal: 127.0.0.1 - - [17/Aug/2021 21:34:17] "GET / HTTP/1.1" 200 -
+[2021-08-17 21:34:19,831] WARNING in distance_blueprint: Adress = 1-YA TVERSKAYA-YAMSKAYA ULITSA, NO:7 | Location is in MKAD Zone,
+[2021-08-17 21:34:19,832] INFO in _internal: 127.0.0.1 - - [17/Aug/2021 21:34:19] "POST /distance HTTP/1.1" 200 -
+[2021-08-17 21:34:28,899] INFO in _internal: 127.0.0.1 - - [17/Aug/2021 21:34:28] "GET / HTTP/1.1" 200 -
+[2021-08-17 21:34:31,631] WARNING in distance_blueprint: Adress = MOSCOW RING ROAD | Location is in MKAD Zone,
+[2021-08-17 21:34:31,632] INFO in _internal: 127.0.0.1 - - [17/Aug/2021 21:34:31] "POST /distance HTTP/1.1" 200 -
+[2021-08-17 21:34:32,550] INFO in _internal: 127.0.0.1 - - [17/Aug/2021 21:34:32] "GET / HTTP/1.1" 200 -
+[2021-08-17 21:34:34,649] WARNING in distance_blueprint: Adress = RUSSIA, MOSCOW, ARBATSKO-POKROVSKAYA LINE, METRO ARBATSKAYA | Location is in MKAD Zone,
+[2021-08-17 21:34:34,649] INFO in _internal: 127.0.0.1 - - [17/Aug/2021 21:34:34] "POST /distance HTTP/1.1" 200 -
+[2021-08-17 21:34:35,333] INFO in _internal: 127.0.0.1 - - [17/Aug/2021 21:34:35] "GET / HTTP/1.1" 200 -
+[2021-08-17 21:34:36,964] INFO in distance_blueprint: Adress = LYON | 2528.26KM,
+[2021-08-17 21:34:36,965] INFO in _internal: 127.0.0.1 - - [17/Aug/2021 21:34:36] "POST /distance HTTP/1.1" 200 -

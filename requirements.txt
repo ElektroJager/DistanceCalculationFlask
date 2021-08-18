@@ -1,0 +1,4 @@
+Flask==2.0.1
+Shapely==1.7.1
+yandex-geocoder==2.0.0
+haversine==2.3.1.
