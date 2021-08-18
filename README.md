@@ -1,7 +1,7 @@
 # Distance Calculation Blueprint
 Flask Blueprint to find the distance from the Moscow Ring Road to the specified address.
 
-# How to Use
+## How to use.
 Start flask server by going to the folder where the application is located and typing "flask run" at the command prompt.
 
 ```
@@ -23,3 +23,21 @@ If you want to calculate the distance of another adress. Click to calculate anot
 
 All the information about adress will be logged in distance_logs.log file.
 
+
+## How to pull docker image and run as a container.
+
+[Docker Hub Link](https://hub.docker.com/r/elektrojager/python_flask_distance_calculator)
+
+Open CMD and type ->
+
+```
+$ docker pull elektrojager/python_flask_distance_calculator
+```
+
+After this you can run image by typing ->
+
+```
+$ docker run --publish 5000:5000 elektrojager/python_flask_distance_calculator
+```
+
+Now you can go and start using app in http://localhost:5000/ .
